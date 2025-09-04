@@ -1,37 +1,27 @@
-import { Octokit } from "octokit";
+const owner = process.env.OWNER;
+const check_follow = async (userX, userY, token) => {
+  try {
+    const response = await fetch(`https://api.github.com/users/${userX}/following/${userY}`, {
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        ...(token && { 'Authorization': `Bearer ${token}` }),
+      },
+    });
 
-// Initialize Octokit (use a token for higher rate limits)
-const octokit = new Octokit({
-  auth: process.env.CUSTOM_TOKEN, // optional, but recommended
-});
+    if (response.status === 204) return true;  // X follows Y
+    if (response.status === 404) return false; // X does not follow Y
 
-/**
- * Fetch all followers of a GitHub user
- * @param {string} username - GitHub username
- * @returns {Promise<string[]>} - Array of follower usernames
- */
-async function fetchAllFollowers(username) {
-  const followers = [];
-
-  // Use Octokit pagination helper
-  const iterator = octokit.paginate.iterator(octokit.users.listFollowersForUser, {
-    username,
-    per_page: 100, // max per page
-  });
-
-  for await (const { data } of iterator) {
-    for (const follower of data) {
-      followers.push(follower.login);
-    }
+    throw new Error(`Unexpected status code: ${response.status}`);
+  } catch (err) {
+    throw err;
   }
-
-  return followers;
-}
-
-// Example usage
-(async () => {
-  const username = "octocat"; // replace with any username
-  const allFollowers = await fetchAllFollowers(username);
-  console.log(`Total followers of ${username}:`, allFollowers.length);
-  console.log(allFollowers);
-})();
+};
+const userX = 'zakarialaoui10';
+const userY = 'hixvmx';
+check_follow(userX, owner)
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
