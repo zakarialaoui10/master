@@ -8,6 +8,7 @@ console.log({
     owner,
     repo,
     BaseDir,
+    t : Date.now(),
     a : 0
 })
 
@@ -21,5 +22,6 @@ writeFileSync('./cache/test.json', JSON.stringify({
     owner,
     repo,
     BaseDir,
+    t : Date.now(),
     a : 0
 }));
