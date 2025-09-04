@@ -1,3 +1,4 @@
+import {writeFileSync} from 'fs'
 const owner = process.env.OWNER;
 const repo = process.env.REPO;
 const BaseDir = process.cwd();
@@ -9,3 +10,5 @@ console.log({
     BaseDir,
     a : 0
 })
+
+writeFileSync('test.txt',"Test")
