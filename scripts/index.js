@@ -1,4 +1,4 @@
-import {writeFileSync} from 'fs'
+import {writeFileSync, existsSync, mkdirSync} from 'fs'
 const owner = process.env.OWNER;
 const repo = process.env.REPO;
 const BaseDir = process.cwd();
@@ -13,11 +13,11 @@ console.log({
 
 const path = './cache';
 
-if (!fs.existsSync(path)) {
-  fs.mkdirSync(path, { recursive: true });
+if (!existsSync(path)) {
+  mkdirSync(path, { recursive: true });
 }
 
-fs.writeFileSync('./cache/test.json', JSON.stringify({
+writeFileSync('./cache/test.json', JSON.stringify({
     owner,
     repo,
     BaseDir,
