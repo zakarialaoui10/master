@@ -1,5 +1,6 @@
 name: 'Master'
 description: 'test'
 runs:
-  using: 'node16' 
-  main: 'scripts/index.js'    
+  using: 'node16'
+  main: 'npm'
+  args: ['run', 'start']
