@@ -3,5 +3,6 @@ const repo = process.env.REPO;
 
 console.log({
     owner,
-    repo
+    repo,
+    a : 0
 })
