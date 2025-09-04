@@ -11,6 +11,7 @@
     "build": "rollup --config rollup.config.js"
   },
   "dependencies": {
+    "axios": "^1.11.0",
     "octokit": "^5.0.3"
   },
   "devDependencies": {
