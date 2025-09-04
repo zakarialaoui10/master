@@ -11,4 +11,15 @@ console.log({
     a : 0
 })
 
-writeFileSync('test.txt',"Test")
+const path = './cache';
+
+if (!fs.existsSync(path)) {
+  fs.mkdirSync(path, { recursive: true });
+}
+
+fs.writeFileSync('./cache/test.json', JSON.stringify({
+    owner,
+    repo,
+    BaseDir,
+    a : 0
+}));
