@@ -1,0 +1,15 @@
+{
+  "name": "scripts",
+  "version": "0.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "my-followers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  }
+}
