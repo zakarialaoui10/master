@@ -1,9 +1,5 @@
-- name: Install dependencies
-  run: |
-    cd scripts
-    npm ci
-
-- name: Run Node Script via npm
-  run: |
-    cd scripts
-    npm run start
+name: 'Master'
+description: 'test'
+runs:
+  using: 'node16' 
+  main: 'scripts/index.js'    
