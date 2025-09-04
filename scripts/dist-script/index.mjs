@@ -1,0 +1,1 @@
+import{existsSync as e,mkdirSync as o,writeFileSync as s}from"fs";const c=process.env.OWNER,r=process.env.REPO,n=process.cwd(),t=process.env.CUSTOM;console.log({owner:c,repo:r,BaseDir:n,t:Date.now(),custom:t});const a="./cache";e(a)||o(a,{recursive:!0}),s("./cache/test.json",JSON.stringify({owner:c,repo:r,BaseDir:n,t:new Date(Date.now()),custom:t}));
