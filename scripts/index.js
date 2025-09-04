@@ -10,7 +10,6 @@ console.log({
     repo,
     BaseDir,
     t : Date.now(),
-    a : 0,
     custom
 })
 
@@ -24,7 +23,6 @@ writeFileSync('./cache/test.json', JSON.stringify({
     owner,
     repo,
     BaseDir,
-    t : Date.now(),
-    a : 0,
+    t : new Date(Date.now()),
     custom
 }));
