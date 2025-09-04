@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/rest";
+import { Octokit } from "octokit";
 
 // Initialize Octokit (use a token for higher rate limits)
 const octokit = new Octokit({
