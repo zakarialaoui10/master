@@ -19,7 +19,7 @@ const output = [
 ]
 
 export default {
-  input: 'index.js',
+  input: 'src/index.js',
   output,
    plugins: [
     resolve(), 
