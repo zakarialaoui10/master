@@ -1,5 +1,5 @@
 name: 'Master'
 description: 'test'
 runs:
-  using: 'node16' 
+  using: 'node20' 
   main: 'scripts/index.js'    
