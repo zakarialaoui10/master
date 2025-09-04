@@ -2,5 +2,5 @@ name: 'Master'
 description: 'test'
 runs:
   using: 'node20' 
-  main: 'scripts/dist-script/index.mjs' 
+  main: 'entry/dist.js' 
   #main: 'scripts/index.js'    

@@ -6,7 +6,7 @@ import terser from '@rollup/plugin-terser';
 
 const output = [
   {
-    file: 'dist-script/index.mjs',
+    file: 'dist.js',
     format: 'es',
     // banner,
     exports: "named",
